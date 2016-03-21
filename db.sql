@@ -25,8 +25,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `Task`
 --
-
-CREATE TABLE IF NOT EXISTS `Task` (
+DROP TABLE IF EXISTS `Task`;
+CREATE TABLE `Task` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `TITLE` text NOT NULL,
   `DESCRIPTION` text NOT NULL,
