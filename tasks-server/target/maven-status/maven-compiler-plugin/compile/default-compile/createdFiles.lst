@@ -1,0 +1,5 @@
+tasks/service/ApplicationConfig.class
+tasks/service/TaskFacadeREST.class
+tasks/service/AbstractFacade.class
+tasks/Task.class
+tasks/Task_.class
