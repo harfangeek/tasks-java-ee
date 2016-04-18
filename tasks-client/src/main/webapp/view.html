@@ -13,8 +13,10 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="tasks.js"></script>
+    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,7 +26,7 @@
 
 </head>
 <body>
-
+    
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -36,19 +38,30 @@
             </div>
         </div>
     </nav>
-
+    
     <main>
         <div class="container">
-              <h1>Welcome</h1>
-    <p class="lead">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate mauris non velit eleifend, ac congue odio feugiat. Duis vitae urna interdum, sodales magna quis, condimentum mauris. In id tortor erat. Proin libero dolor, interdum a auctor sed, auctor ut neque. Vivamus sed libero magna. Sed at purus lobortis, accumsan neque sed, facilisis nibh. Proin quis congue lectus, vel mollis lectus. In ligula risus, semper ut libero id, rutrum lobortis lorem. Aenean lacus elit, viverra nec lacinia ac, elementum vitae ex. Cras non ante sit amet libero pharetra tincidunt. Pellentesque massa purus, iaculis sed dictum et, rutrum nec quam.
-    </p>
-    <hr>
-
-    <a href="tasks.html" class="btn btn-info">View Tasks</a>
-    <a href="add.html" class="btn btn-primary">Add New Task</a>
-
-
+            <div ng-app="myApp" ng-controller="Tasks" ng-init="getTask(getParameter('task'))">
+                    <a href="tasks.html" class="btn btn-info">Back to all tasks</a>
+                    <a href="edit.html?task={{id}}" class="btn btn-primary">Edit Task</a>
+                <hr>
+                <form ng-submit="editTask()">
+                  
+                    <div class="form-group row">                    
+                        <label for="title" class="col-sm-2 form-control-label">Title :</label>
+                           <div class="col-sm-4">
+                            <input type="text" name="title" class="form-control" ng-model="title" disabled="disabled" required />                        
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-2 form-control-label">Description : </label>
+                         <div class="col-sm-4">
+                             <textarea type="text" name="description" class="form-control" ng-model="description" disabled="disabled" required ></textarea>                                              
+                        </div>
+                    </div>
+                    <hr />
+                </form>
+            </div>
         </div>
     </main>
 

@@ -7,6 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -28,11 +30,11 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="">Tasks</a>
+                <a class="navbar-brand" href="index.html">Tasks</a>
             </div>
             <div class="nav navbar-nav navbar-right">
-                <li><a href="">Home</a></li>
-                <li><a href="">Tasks</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
             </div>
         </div>
     </nav>
@@ -51,11 +53,11 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="add.html" class="btn btn-info">View Task</a>
-                                <a href="" class="btn btn-primary">Edit Task</a>
+                                <a href="view.html?task={{i.task.id}}" class="btn btn-info">View Task</a>
+                                <a href="edit.html?task={{i.task.id}}" class="btn btn-primary">Edit Task</a>
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="" class="btn btn-danger">Delete this task?</a>
+                                <a href="" class="btn btn-danger" ng-click="removeTask(i.task.id);">Delete this task?</a>
                             </div>
                         </div>
                         <hr>
